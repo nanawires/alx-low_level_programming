@@ -8,13 +8,14 @@ int main(void)
 {
 	int numba = 0;
 
-	while (numba < 9)
+	while (numba <= 9)
 	{
 		putchar(numba + '0');
-		numba++;
+		if (numba == 9)
+			break;
 		putchar(',');
 		putchar(' ');
 	}
-	putchar('9');
+	putchar('\n');
 	return (0);
 }
