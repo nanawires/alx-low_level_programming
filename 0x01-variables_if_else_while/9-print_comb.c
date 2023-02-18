@@ -12,8 +12,8 @@ int main(void)
 	{
 		putchar(numba + '0');
 		numba++;
-		putchar(',')
-		putchar(' ')
+		putchar(',');
+		putchar(' ');
 	}
 	putchar('5');
 	putchar('\n');
