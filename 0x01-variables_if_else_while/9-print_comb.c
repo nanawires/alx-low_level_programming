@@ -15,6 +15,7 @@ int main(void)
 			break;
 		putchar(',');
 		putchar(' ');
+		numba++;
 	}
 	putchar('\n');
 	return (0);
