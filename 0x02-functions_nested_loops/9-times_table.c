@@ -4,30 +4,39 @@
 /**
  * times_table - prints the 9 times table starting with 0
  *
+ * Return: void
  */
 void times_table(void)
 {
-	int num, mult, prod;
+	int row, column, product, tens, ones;
 
-	for (num = 0; num <= 9; num++)
+	for (row = 0; row <= 9; row++)
 	{
-		for (mult = 0; mult <= 9; mult++)
+		for (column = 0; column <= 9; column++)
 		{
-			prod = num * mult;
+			product = row * column;
+			tens = product / 10;
+			ones = product % 10;
 
-			if (prod >= 10)
-				_putchar((prod / 10) + '0');
-
-			_putchar((prod % 10) + '0');
-
-			if (mult == 9)
-				continue;
-
-			_putchar(',');
-			_putchar(' ');
-		
+			if (column == 0)
+			{
+				_putchar('0');
+			}
+			else if (product < 10)
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
+			else
+			{
+				_putchar(',');
+				_putchar(' ');
+				_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
 		}
 		_putchar('\n');
 	}
 }
-
