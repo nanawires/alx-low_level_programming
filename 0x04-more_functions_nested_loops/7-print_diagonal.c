@@ -2,20 +2,26 @@
 #include "main.h"
 
 /**
- * print_line - prints a line
- * @n: variable
- *
- * Return: 0.
+ * print_diagonal - diagonal line made of backlashes
+ * @n: number of \  to be printed
+ * Return: void
  */
 
-void print_line(int n)
+void print_diagonal(int n)
 {
-	int a = 0;
+	int x, y;
 
-	while (a < n && n > 0)
+	if (n > 0)
 	{
-		_putchar('_');
-		a++;
+		for (x = 0; x < n; x++)
+		{
+			for (y = 0; y < x; y++)
+				_putchar(' ');
+			_putchar('\\');
+			if (x == (n - 1))
+				continue;
+			_putchar('\n');
+		}
 	}
 	_putchar('\n');
 }
