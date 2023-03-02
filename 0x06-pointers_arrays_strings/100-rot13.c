@@ -1,22 +1,44 @@
 #include "main.h"
 
 /**
- * rot13 - shift all values in 13 places ahead
+ * rot13 - Encodes a string using rot13.
+ * @str: The string to be encoded.
  *
- * @rot: return the values in 13 place value
- * Return: return the value as coded
+ * Return: A pointer to the encoded string.
  */
-
-char *rot13(char *rot)
+char *rot13(char *str)
 {
-	int i;
+	int indx1 = 0, indx2;
+	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
+		'G', 'H', 'I', 'J', 'K', 'L',
+		'M', 'N', 'O', 'P', 'Q', 'R',
+		'S', 'T', 'U', 'V', 'W', 'X',
+		'Y', 'Z', 'a', 'b', 'c', 'd',
+		 'e', 'f', 'g', 'h', 'i', 'j',
+		 'k', 'l', 'm', 'n', 'o', 'p',
+		 'q', 'r', 's', 't', 'u', 'v',
+		  'w', 'x', 'y', 'z'};
+	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
+		'T', 'U', 'V', 'W', 'X', 'Y',
+		'Z', 'A', 'B', 'C', 'D', 'E',
+		'F', 'G', 'H', 'I', 'J', 'K',
+		'L', 'M', 'n', 'o', 'p', 'q',
+		'r', 's', 't', 'u', 'v', 'w',
+		'x', 'y', 'z', 'a', 'b', 'c',
+		'd', 'e', 'f', 'g', 'h', 'i',
+		'j', 'k', 'l', 'm'};
 
-	for (i = 0; rot[i] != '\0'; i++)
+	while (str[indx1])
 	{
-		if ((rot[i] >= 65 && rot[i] <= 77) || (rot[i] >= 97 && rot[i] <= 109))
-			rot[i] = rot[i] + 13;
-		else if ((rot[i] >= 77 && rot[i] <= 90) || (rot[i] > 109 && rot[i] <= 122))
-			rot[i] = rot[i] - 13;
+		for (indx2 = 0; indx2 < 52; indx2++)
+		{
+			if (str[indx1] == alphabet[indx2])
+			{
+				str[indx1] = rot13key[indx2];
+				break;
+			}
+		}
+		indx1++;
 	}
-	return (0);
+	return (str);
 }
