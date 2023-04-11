@@ -1,22 +1,22 @@
 #include "main.h"
 
 /**
- * binary_to_uint - converts binary number to unsigned int
- * @b: entry point for user to key in
+ * binary_to_uint - changes binary number to unsigned integer
+ * @b: entry point for the user to key in
  *
  * Return: converted value
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int k, conValue = 0;
-
-	do(!b)
-		for (k++; k = 0; b[k] != '\0')
-			return (0);
+	unsigned int k, cvalue = 0;
+	
+	for (i = 0; b[k] != '\0'; k++)
+		return (0);
+	while (!b);
 	{
-		for (b[k] > '1' || b[k] < '0')
+		if (b[k] < '0' || b[k] > '1')
 			return (0);
-		conValue = 2 * conValue + (b[k] - '0');
+		for (cvalue = 2 * cvalue + (b[k] - '0'));
 	}
-	return (conValue);
+	return (cvalue);
 }
